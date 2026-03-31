@@ -59,17 +59,17 @@ export default async function DeviceDetailPage({
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
-      <Link href="/devices" className="text-sm text-blue-600 hover:underline mb-4 inline-block">
+      <Link href="/devices" className="text-sm text-indigo-400 hover:text-indigo-300 hover:underline mb-4 inline-block">
         ← Zpět na zařízení
       </Link>
       <div className="card">
         <div className="flex items-center gap-4 mb-6">
-          <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-purple-100 text-3xl">
+          <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-purple-900/80 text-3xl">
             {typeIcons[device.type] ?? '🔧'}
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">{device.name}</h1>
-            <span className="badge bg-purple-100 text-purple-800 mt-1">
+            <h1 className="text-2xl font-bold text-gray-100">{device.name}</h1>
+            <span className="badge bg-purple-900/60 text-purple-300 ring-1 ring-purple-700 mt-1">
               {deviceTypeLabels[device.type] ?? device.type}
             </span>
           </div>
@@ -78,14 +78,14 @@ export default async function DeviceDetailPage({
           {device.serialNumber && (
             <div>
               <dt className="text-sm font-medium text-gray-500">Sériové číslo</dt>
-              <dd className="mt-1 text-gray-900 font-mono">{device.serialNumber}</dd>
+              <dd className="mt-1 text-gray-200 font-mono">{device.serialNumber}</dd>
             </div>
           )}
           <div>
             <dt className="text-sm font-medium text-gray-500">Místnost</dt>
             <dd className="mt-1">
               {room ? (
-                <Link href={`/rooms/${room.id}`} className="text-blue-600 hover:underline">
+                <Link href={`/rooms/${room.id}`} className="text-indigo-400 hover:underline">
                   {room.name} (patro {room.floor})
                 </Link>
               ) : (
@@ -95,11 +95,11 @@ export default async function DeviceDetailPage({
           </div>
           <div>
             <dt className="text-sm font-medium text-gray-500">ID</dt>
-            <dd className="mt-1 text-gray-900 font-mono text-xs break-all">{device.id}</dd>
+            <dd className="mt-1 text-gray-400 font-mono text-xs break-all">{device.id}</dd>
           </div>
           <div>
             <dt className="text-sm font-medium text-gray-500">Vytvořeno</dt>
-            <dd className="mt-1 text-gray-900">
+            <dd className="mt-1 text-gray-200">
               {new Date(device.createdAt).toLocaleString('cs-CZ')}
             </dd>
           </div>

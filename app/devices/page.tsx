@@ -45,7 +45,7 @@ export default async function DevicesPage({
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Zařízení</h1>
+          <h1 className="text-2xl font-bold text-gray-100">Zařízení</h1>
           <p className="text-sm text-gray-500 mt-1">
             Celkem {filtered.length} {filtered.length !== devices.length && `z ${devices.length}`} zařízení
           </p>
@@ -71,14 +71,14 @@ export default async function DevicesPage({
             <Link
               key={device.id}
               href={`/devices/${device.id}`}
-              className="card hover:shadow-md transition-shadow group"
+              className="card hover:border-gray-700 hover:bg-gray-800/80 transition-all group"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-purple-100 text-xl">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-purple-900/80 text-xl">
                   {typeIcons[device.type] ?? '🔧'}
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="font-semibold text-gray-900 group-hover:text-blue-600 truncate">
+                  <p className="font-semibold text-gray-100 group-hover:text-indigo-400 truncate">
                     {device.name}
                   </p>
                   <p className="text-sm text-gray-500">

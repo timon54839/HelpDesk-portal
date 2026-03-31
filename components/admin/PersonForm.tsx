@@ -40,44 +40,24 @@ export default function PersonForm({ initial, onSubmit }: Props) {
   return (
     <form onSubmit={handleSubmit} className="space-y-4 max-w-lg">
       {error && (
-        <div className="rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+        <div className="rounded-lg border border-red-800 bg-red-950/60 px-4 py-3 text-sm text-red-300">
           {error}
         </div>
       )}
       <div>
         <label htmlFor="name" className="label">Jméno *</label>
-        <input
-          id="name"
-          name="name"
-          type="text"
-          required
-          maxLength={120}
-          defaultValue={initial?.name}
-          className="input"
-          placeholder="Jan Novák"
-        />
+        <input id="name" name="name" type="text" required maxLength={120}
+          defaultValue={initial?.name} className="input" placeholder="Jan Novák" />
       </div>
       <div>
         <label htmlFor="email" className="label">E-mail *</label>
-        <input
-          id="email"
-          name="email"
-          type="email"
-          required
-          defaultValue={initial?.email}
-          className="input"
-          placeholder="jan.novak@skola.cz"
-        />
+        <input id="email" name="email" type="email" required
+          defaultValue={initial?.email} className="input" placeholder="jan.novak@skola.cz" />
       </div>
       <div>
         <label htmlFor="jobPosition" className="label">Pozice *</label>
-        <select
-          id="jobPosition"
-          name="jobPosition"
-          required
-          defaultValue={initial?.jobPosition ?? 'STUDENT'}
-          className="input"
-        >
+        <select id="jobPosition" name="jobPosition" required
+          defaultValue={initial?.jobPosition ?? 'STUDENT'} className="input">
           {positions.map((p) => (
             <option key={p.value} value={p.value}>{p.label}</option>
           ))}

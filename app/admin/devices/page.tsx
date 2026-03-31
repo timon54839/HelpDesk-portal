@@ -28,7 +28,7 @@ export default async function AdminDevicesPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Zařízení</h1>
+        <h1 className="text-2xl font-bold text-gray-100">Zařízení</h1>
         <Link href="/admin/devices/new" className="btn-primary">
           + Přidat zařízení
         </Link>
@@ -38,28 +38,28 @@ export default async function AdminDevicesPage() {
       ) : (
         <div className="card p-0 overflow-hidden">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50 border-b border-gray-200">
+            <thead className="bg-gray-800/60 border-b border-gray-700">
               <tr>
-                <th className="px-4 py-3 text-left font-medium text-gray-700">Název</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-700">Typ</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-700">Sér. číslo</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-700">Místnost</th>
-                <th className="px-4 py-3 text-right font-medium text-gray-700">Akce</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-400">Název</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-400">Typ</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-400">Sér. číslo</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-400">Místnost</th>
+                <th className="px-4 py-3 text-right font-medium text-gray-400">Akce</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-gray-800">
               {devices.map((device) => (
-                <tr key={device.id} className="hover:bg-gray-50">
-                  <td className="px-4 py-3 font-medium text-gray-900">{device.name}</td>
+                <tr key={device.id} className="hover:bg-gray-800/40 transition-colors">
+                  <td className="px-4 py-3 font-medium text-gray-100">{device.name}</td>
                   <td className="px-4 py-3">
-                    <span className="badge bg-purple-100 text-purple-800">
+                    <span className="badge bg-purple-900/60 text-purple-300 ring-1 ring-purple-700">
                       {deviceTypeLabels[device.type] ?? device.type}
                     </span>
                   </td>
-                  <td className="px-4 py-3 text-gray-600 font-mono text-xs">
+                  <td className="px-4 py-3 text-gray-500 font-mono text-xs">
                     {device.serialNumber ?? '—'}
                   </td>
-                  <td className="px-4 py-3 text-gray-600">
+                  <td className="px-4 py-3 text-gray-400">
                     {roomMap.get(device.roomId) ?? '—'}
                   </td>
                   <td className="px-4 py-3">

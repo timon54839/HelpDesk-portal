@@ -28,7 +28,7 @@ export default async function RoomsPage({
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Místnosti</h1>
+          <h1 className="text-2xl font-bold text-gray-100">Místnosti</h1>
           <p className="text-sm text-gray-500 mt-1">
             Celkem {filtered.length} {filtered.length !== rooms.length && `z ${rooms.length}`} místností
           </p>
@@ -49,14 +49,14 @@ export default async function RoomsPage({
             <Link
               key={room.id}
               href={`/rooms/${room.id}`}
-              className="card hover:shadow-md transition-shadow group"
+              className="card hover:border-gray-700 hover:bg-gray-800/80 transition-all group"
             >
               <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-green-100 text-green-700 text-xl">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-emerald-900/80 text-xl">
                   🏫
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 group-hover:text-blue-600">
+                  <p className="font-semibold text-gray-100 group-hover:text-indigo-400">
                     {room.name}
                   </p>
                   <p className="text-sm text-gray-500">Patro: {room.floor}</p>

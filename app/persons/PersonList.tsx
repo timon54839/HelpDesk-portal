@@ -23,18 +23,18 @@ export default function PersonList({ persons }: { persons: Person[] }) {
         <Link
           key={person.id}
           href={`/persons/${person.id}`}
-          className="card hover:shadow-md transition-shadow group"
+          className="card hover:border-gray-700 hover:bg-gray-800/80 transition-all group"
         >
           <div className="flex items-start gap-3">
-            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-100 text-blue-700 font-semibold text-sm">
+            <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-900 text-indigo-300 font-semibold text-sm">
               {person.name.charAt(0).toUpperCase()}
             </div>
             <div className="min-w-0 flex-1">
-              <p className="font-semibold text-gray-900 group-hover:text-blue-600 truncate">
+              <p className="font-semibold text-gray-100 group-hover:text-indigo-400 truncate">
                 {person.name}
               </p>
               <p className="text-sm text-gray-500 truncate">{person.email}</p>
-              <span className="badge bg-blue-100 text-blue-800 mt-1">
+              <span className="badge bg-indigo-900/60 text-indigo-300 ring-1 ring-indigo-700 mt-1">
                 {positionLabels[person.jobPosition] ?? person.jobPosition}
               </span>
             </div>

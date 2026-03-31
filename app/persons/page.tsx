@@ -34,7 +34,7 @@ export default async function PersonsPage({
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Osoby</h1>
+          <h1 className="text-2xl font-bold text-gray-100">Osoby</h1>
           <p className="text-sm text-gray-500 mt-1">
             Celkem {filtered.length} {filtered.length !== persons.length && `z ${persons.length}`} osob
           </p>

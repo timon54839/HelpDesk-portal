@@ -19,7 +19,7 @@ export default async function AdminTicketsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Tikety</h1>
+        <h1 className="text-2xl font-bold text-gray-100">Tikety</h1>
         <Link href="/admin/tickets/new" className="btn-primary">
           + Přidat tiket
         </Link>
@@ -29,20 +29,20 @@ export default async function AdminTicketsPage() {
       ) : (
         <div className="card p-0 overflow-hidden">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50 border-b border-gray-200">
+            <thead className="bg-gray-800/60 border-b border-gray-700">
               <tr>
-                <th className="px-4 py-3 text-left font-medium text-gray-700">Název</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-700">Stav</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-700">Priorita</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-700">Vytvořeno</th>
-                <th className="px-4 py-3 text-right font-medium text-gray-700">Akce</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-400">Název</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-400">Stav</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-400">Priorita</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-400">Vytvořeno</th>
+                <th className="px-4 py-3 text-right font-medium text-gray-400">Akce</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-gray-800">
               {tickets.map((ticket) => (
-                <tr key={ticket.id} className="hover:bg-gray-50">
+                <tr key={ticket.id} className="hover:bg-gray-800/40 transition-colors">
                   <td className="px-4 py-3">
-                    <p className="font-medium text-gray-900 max-w-xs truncate">{ticket.title}</p>
+                    <p className="font-medium text-gray-100 max-w-xs truncate">{ticket.title}</p>
                     <p className="text-xs text-gray-500 truncate max-w-xs">{ticket.description}</p>
                   </td>
                   <td className="px-4 py-3">
@@ -51,7 +51,7 @@ export default async function AdminTicketsPage() {
                   <td className="px-4 py-3">
                     <PriorityBadge priority={ticket.priority as TicketPriority} />
                   </td>
-                  <td className="px-4 py-3 text-gray-600 text-xs">
+                  <td className="px-4 py-3 text-gray-500 text-xs">
                     {new Date(ticket.createdAt).toLocaleDateString('cs-CZ')}
                   </td>
                   <td className="px-4 py-3">

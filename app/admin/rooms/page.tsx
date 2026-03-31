@@ -17,7 +17,7 @@ export default async function AdminRoomsPage() {
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-gray-900">Místnosti</h1>
+        <h1 className="text-2xl font-bold text-gray-100">Místnosti</h1>
         <Link href="/admin/rooms/new" className="btn-primary">
           + Přidat místnost
         </Link>
@@ -27,18 +27,18 @@ export default async function AdminRoomsPage() {
       ) : (
         <div className="card p-0 overflow-hidden">
           <table className="w-full text-sm">
-            <thead className="bg-gray-50 border-b border-gray-200">
+            <thead className="bg-gray-800/60 border-b border-gray-700">
               <tr>
-                <th className="px-4 py-3 text-left font-medium text-gray-700">Název</th>
-                <th className="px-4 py-3 text-left font-medium text-gray-700">Patro</th>
-                <th className="px-4 py-3 text-right font-medium text-gray-700">Akce</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-400">Název</th>
+                <th className="px-4 py-3 text-left font-medium text-gray-400">Patro</th>
+                <th className="px-4 py-3 text-right font-medium text-gray-400">Akce</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-gray-100">
+            <tbody className="divide-y divide-gray-800">
               {rooms.map((room) => (
-                <tr key={room.id} className="hover:bg-gray-50">
-                  <td className="px-4 py-3 font-medium text-gray-900">{room.name}</td>
-                  <td className="px-4 py-3 text-gray-600">{room.floor}</td>
+                <tr key={room.id} className="hover:bg-gray-800/40 transition-colors">
+                  <td className="px-4 py-3 font-medium text-gray-100">{room.name}</td>
+                  <td className="px-4 py-3 text-gray-400">{room.floor}</td>
                   <td className="px-4 py-3">
                     <div className="flex justify-end gap-2">
                       <Link href={`/admin/rooms/${room.id}/edit`} className="btn-secondary text-xs">

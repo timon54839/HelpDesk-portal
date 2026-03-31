@@ -45,17 +45,17 @@ export default async function PersonDetailPage({
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
-      <Link href="/persons" className="text-sm text-blue-600 hover:underline mb-4 inline-block">
+      <Link href="/persons" className="text-sm text-indigo-400 hover:text-indigo-300 hover:underline mb-4 inline-block">
         ← Zpět na osoby
       </Link>
       <div className="card">
         <div className="flex items-center gap-4 mb-6">
-          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-blue-100 text-blue-700 font-bold text-2xl">
+          <div className="flex h-16 w-16 items-center justify-center rounded-full bg-indigo-900 text-indigo-300 font-bold text-2xl">
             {person.name.charAt(0).toUpperCase()}
           </div>
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">{person.name}</h1>
-            <span className="badge bg-blue-100 text-blue-800 mt-1">
+            <h1 className="text-2xl font-bold text-gray-100">{person.name}</h1>
+            <span className="badge bg-indigo-900/60 text-indigo-300 ring-1 ring-indigo-700 mt-1">
               {positionLabels[person.jobPosition] ?? person.jobPosition}
             </span>
           </div>
@@ -63,25 +63,25 @@ export default async function PersonDetailPage({
         <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
             <dt className="text-sm font-medium text-gray-500">E-mail</dt>
-            <dd className="mt-1 text-gray-900">
-              <a href={`mailto:${person.email}`} className="text-blue-600 hover:underline">
+            <dd className="mt-1 text-gray-200">
+              <a href={`mailto:${person.email}`} className="text-indigo-400 hover:underline">
                 {person.email}
               </a>
             </dd>
           </div>
           <div>
             <dt className="text-sm font-medium text-gray-500">ID</dt>
-            <dd className="mt-1 text-gray-900 font-mono text-xs break-all">{person.id}</dd>
+            <dd className="mt-1 text-gray-400 font-mono text-xs break-all">{person.id}</dd>
           </div>
           <div>
             <dt className="text-sm font-medium text-gray-500">Vytvořeno</dt>
-            <dd className="mt-1 text-gray-900">
+            <dd className="mt-1 text-gray-200">
               {new Date(person.createdAt).toLocaleString('cs-CZ')}
             </dd>
           </div>
           <div>
             <dt className="text-sm font-medium text-gray-500">Aktualizováno</dt>
-            <dd className="mt-1 text-gray-900">
+            <dd className="mt-1 text-gray-200">
               {new Date(person.updatedAt).toLocaleString('cs-CZ')}
             </dd>
           </div>

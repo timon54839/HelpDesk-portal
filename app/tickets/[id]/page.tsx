@@ -40,12 +40,12 @@ export default async function TicketDetailPage({
 
   return (
     <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6 lg:px-8">
-      <Link href="/tickets" className="text-sm text-blue-600 hover:underline mb-4 inline-block">
+      <Link href="/tickets" className="text-sm text-indigo-400 hover:text-indigo-300 hover:underline mb-4 inline-block">
         ← Zpět na tikety
       </Link>
       <div className="card">
         <div className="flex items-start justify-between gap-4 mb-6">
-          <h1 className="text-2xl font-bold text-gray-900">{ticket.title}</h1>
+          <h1 className="text-2xl font-bold text-gray-100">{ticket.title}</h1>
           <div className="flex flex-col gap-1 items-end flex-shrink-0">
             <StatusBadge status={ticket.status as TicketStatus} />
             <PriorityBadge priority={ticket.priority as TicketPriority} />
@@ -54,17 +54,17 @@ export default async function TicketDetailPage({
 
         <div className="mb-6">
           <h2 className="text-sm font-medium text-gray-500 mb-2">Popis</h2>
-          <p className="text-gray-700 whitespace-pre-wrap">{ticket.description}</p>
+          <p className="text-gray-300 whitespace-pre-wrap">{ticket.description}</p>
         </div>
 
-        <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-gray-100">
+        <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-gray-800">
           {ticket.assignedPerson && (
             <div>
               <dt className="text-sm font-medium text-gray-500">Přiřazená osoba</dt>
               <dd className="mt-1">
                 <Link
                   href={`/persons/${ticket.assignedPersonId}`}
-                  className="text-blue-600 hover:underline"
+                  className="text-indigo-400 hover:underline"
                 >
                   {ticket.assignedPerson.name}
                 </Link>
@@ -77,7 +77,7 @@ export default async function TicketDetailPage({
               <dd className="mt-1">
                 <Link
                   href={`/persons/${ticket.assignedPersonId}`}
-                  className="text-blue-600 hover:underline font-mono text-xs"
+                  className="text-indigo-400 hover:underline font-mono text-xs"
                 >
                   {ticket.assignedPersonId}
                 </Link>
@@ -90,7 +90,7 @@ export default async function TicketDetailPage({
               <dd className="mt-1">
                 <Link
                   href={`/devices/${ticket.deviceId}`}
-                  className="text-blue-600 hover:underline"
+                  className="text-indigo-400 hover:underline"
                 >
                   {ticket.device.name}
                 </Link>
@@ -99,19 +99,19 @@ export default async function TicketDetailPage({
           )}
           <div>
             <dt className="text-sm font-medium text-gray-500">Vytvořeno</dt>
-            <dd className="mt-1 text-gray-900">
+            <dd className="mt-1 text-gray-200">
               {new Date(ticket.createdAt).toLocaleString('cs-CZ')}
             </dd>
           </div>
           <div>
             <dt className="text-sm font-medium text-gray-500">Aktualizováno</dt>
-            <dd className="mt-1 text-gray-900">
+            <dd className="mt-1 text-gray-200">
               {new Date(ticket.updatedAt).toLocaleString('cs-CZ')}
             </dd>
           </div>
           <div>
             <dt className="text-sm font-medium text-gray-500">ID</dt>
-            <dd className="mt-1 text-gray-900 font-mono text-xs break-all">{ticket.id}</dd>
+            <dd className="mt-1 text-gray-400 font-mono text-xs break-all">{ticket.id}</dd>
           </div>
         </dl>
       </div>

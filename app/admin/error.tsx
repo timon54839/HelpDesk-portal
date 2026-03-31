@@ -16,10 +16,10 @@ export default function AdminError({
 
   return (
     <div className="flex min-h-[60vh] items-center justify-center">
-      <div className="card text-center max-w-md">
+      <div className="card text-center max-w-md border-gray-700">
         <div className="text-4xl mb-4">⚠️</div>
-        <h2 className="text-xl font-semibold text-gray-900 mb-2">Chyba v administraci</h2>
-        <p className="text-gray-600 mb-6">{error.message || 'Nastala neočekávaná chyba.'}</p>
+        <h2 className="text-xl font-semibold text-gray-100 mb-2">Chyba v administraci</h2>
+        <p className="text-gray-400 mb-6">{error.message || 'Nastala neočekávaná chyba.'}</p>
         <div className="flex gap-3 justify-center">
           <button onClick={reset} className="btn-primary">Zkusit znovu</button>
           <Link href="/admin/dashboard" className="btn-secondary">Dashboard</Link>
