@@ -17,8 +17,8 @@ export async function createPerson(data: CreatePersonDto) {
     method: 'POST',
     body: JSON.stringify(data),
   })
-  revalidateTag('persons')
-  revalidateTag('landing')
+  revalidateTag('persons', 'default')
+  revalidateTag('landing', 'default')
   redirect('/admin/persons')
 }
 
@@ -27,15 +27,15 @@ export async function updatePerson(id: string, data: Partial<CreatePersonDto>) {
     method: 'PATCH',
     body: JSON.stringify(data),
   })
-  revalidateTag('persons')
-  revalidateTag(`person-${id}`)
+  revalidateTag('persons', 'default')
+  revalidateTag(`person-${id}`, 'default')
   redirect('/admin/persons')
 }
 
 export async function deletePerson(id: string) {
   await fetchApi(`/person/${id}`, { method: 'DELETE' })
-  revalidateTag('persons')
-  revalidateTag('landing')
+  revalidateTag('persons', 'default')
+  revalidateTag('landing', 'default')
   redirect('/admin/persons')
 }
 
@@ -46,8 +46,8 @@ export async function createRoom(data: CreateRoomDto) {
     method: 'POST',
     body: JSON.stringify(data),
   })
-  revalidateTag('rooms')
-  revalidateTag('landing')
+  revalidateTag('rooms', 'default')
+  revalidateTag('landing', 'default')
   redirect('/admin/rooms')
 }
 
@@ -56,15 +56,15 @@ export async function updateRoom(id: string, data: Partial<CreateRoomDto>) {
     method: 'PATCH',
     body: JSON.stringify(data),
   })
-  revalidateTag('rooms')
-  revalidateTag(`room-${id}`)
+  revalidateTag('rooms', 'default')
+  revalidateTag(`room-${id}`, 'default')
   redirect('/admin/rooms')
 }
 
 export async function deleteRoom(id: string) {
   await fetchApi(`/room/${id}`, { method: 'DELETE' })
-  revalidateTag('rooms')
-  revalidateTag('landing')
+  revalidateTag('rooms', 'default')
+  revalidateTag('landing', 'default')
   redirect('/admin/rooms')
 }
 
@@ -75,8 +75,8 @@ export async function createDevice(data: CreateDeviceDto) {
     method: 'POST',
     body: JSON.stringify(data),
   })
-  revalidateTag('devices')
-  revalidateTag('landing')
+  revalidateTag('devices', 'default')
+  revalidateTag('landing', 'default')
   redirect('/admin/devices')
 }
 
@@ -85,15 +85,15 @@ export async function updateDevice(id: string, data: Partial<CreateDeviceDto>) {
     method: 'PATCH',
     body: JSON.stringify(data),
   })
-  revalidateTag('devices')
-  revalidateTag(`device-${id}`)
+  revalidateTag('devices', 'default')
+  revalidateTag(`device-${id}`, 'default')
   redirect('/admin/devices')
 }
 
 export async function deleteDevice(id: string) {
   await fetchApi(`/device/${id}`, { method: 'DELETE' })
-  revalidateTag('devices')
-  revalidateTag('landing')
+  revalidateTag('devices', 'default')
+  revalidateTag('landing', 'default')
   redirect('/admin/devices')
 }
 
@@ -104,8 +104,8 @@ export async function createTicket(data: CreateTicketDto) {
     method: 'POST',
     body: JSON.stringify(data),
   })
-  revalidateTag('tickets')
-  revalidateTag('landing')
+  revalidateTag('tickets', 'default')
+  revalidateTag('landing', 'default')
   redirect('/admin/tickets')
 }
 
@@ -114,15 +114,15 @@ export async function updateTicket(id: string, data: Partial<CreateTicketDto>) {
     method: 'PATCH',
     body: JSON.stringify(data),
   })
-  revalidateTag('tickets')
-  revalidateTag(`ticket-${id}`)
+  revalidateTag('tickets', 'default')
+  revalidateTag(`ticket-${id}`, 'default')
   redirect('/admin/tickets')
 }
 
 export async function deleteTicket(id: string) {
   await fetchApi(`/ticket/${id}`, { method: 'DELETE' })
-  revalidateTag('tickets')
-  revalidateTag('landing')
+  revalidateTag('tickets', 'default')
+  revalidateTag('landing', 'default')
   redirect('/admin/tickets')
 }
 
