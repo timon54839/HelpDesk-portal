@@ -128,7 +128,10 @@ export async function deleteTicket(id: string) {
 
 // ─── Admin auth ──────────────────────────────────────────────────────────────
 
-export async function adminLogin(formData: FormData) {
+export async function adminLogin(
+  _prevState: { error: string } | null,
+  formData: FormData
+): Promise<{ error: string } | null> {
   const password = formData.get('password') as string
   const adminPassword = process.env.ADMIN_PASSWORD ?? 'admin123'
 

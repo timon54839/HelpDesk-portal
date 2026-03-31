@@ -2,7 +2,7 @@
 import type { Metadata } from 'next'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
-import { adminLogin } from '@/lib/actions'
+import AdminLoginForm from '@/components/admin/AdminLoginForm'
 
 export const metadata: Metadata = {
   title: 'Admin přihlášení',
@@ -21,39 +21,21 @@ export default async function AdminLoginPage() {
 
   return (
     <div className="flex min-h-[80vh] items-center justify-center">
-      <div className="card w-full max-w-sm">
+      <div className="card w-full max-w-sm border-gray-700">
         <div className="text-center mb-6">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white font-bold text-lg mx-auto mb-3">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600 text-white font-bold text-lg mx-auto mb-3 shadow-lg shadow-indigo-900/50">
             HP
           </div>
-          <h1 className="text-xl font-bold text-gray-900">Administrace</h1>
+          <h1 className="text-xl font-bold text-gray-100">Administrace</h1>
           <p className="text-sm text-gray-500 mt-1">Zadejte heslo pro vstup</p>
         </div>
 
-        <form action={adminLogin} className="space-y-4">
-          <div>
-            <label htmlFor="password" className="label">
-              Heslo
-            </label>
-            <input
-              id="password"
-              name="password"
-              type="password"
-              required
-              autoComplete="current-password"
-              className="input"
-              placeholder="••••••••"
-            />
-          </div>
-          <button type="submit" className="btn-primary w-full">
-            Přihlásit se
-          </button>
-        </form>
+        <AdminLoginForm />
 
-        <p className="text-xs text-gray-400 text-center mt-4">
-          Výchozí heslo: <code className="bg-gray-100 px-1 rounded">admin123</code>
+        <p className="text-xs text-gray-600 text-center mt-4">
+          Výchozí heslo: <code className="bg-gray-800 text-gray-300 px-1 rounded">admin123</code>
           <br />
-          (nastavte <code className="bg-gray-100 px-1 rounded">ADMIN_PASSWORD</code> v .env)
+          (nastavte <code className="bg-gray-800 text-gray-300 px-1 rounded">ADMIN_PASSWORD</code> v .env)
         </p>
       </div>
     </div>
